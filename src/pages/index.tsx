@@ -1,7 +1,12 @@
+import { Typography } from '@mui/material';
 import type { NextPage } from 'next';
 
 const Home: NextPage = () => {
-  return <h1>Simple trello</h1>;
+  return (
+    <Typography variant="h1" color="primary">
+      Simple trello
+    </Typography>
+  );
 };
 
 export default Home;
