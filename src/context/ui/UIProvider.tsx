@@ -16,15 +16,15 @@ interface Props {
 export const UIProvider: FC<Props> = ({ children }) => {
   const [state, dispatch] = useReducer(uiReducer, INITIAL_STATE);
 
-  const openSidebar = () => {
-    dispatch({ type: 'UI - Open Sidebar' });
-  };
   const closeSidebar = () => {
     dispatch({ type: 'UI - Close Sidebar' });
   };
+  const openSidebar = () => {
+    dispatch({ type: 'UI - Open Sidebar' });
+  };
 
   return (
-    <UIContext.Provider value={{ ...state, openSidebar, closeSidebar }}>
+    <UIContext.Provider value={{ ...state, closeSidebar, openSidebar }}>
       {children}
     </UIContext.Provider>
   );

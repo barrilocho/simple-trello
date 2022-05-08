@@ -4,8 +4,8 @@ interface ContextProps {
   sidebarOpen: boolean;
 
   //Methods
-  openSidebar: () => void;
   closeSidebar: () => void;
+  openSidebar: () => void;
 }
 
 export const UIContext = createContext({} as ContextProps);
