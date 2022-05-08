@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import {
   Box,
   Divider,
@@ -10,17 +11,17 @@ import {
 } from '@mui/material';
 import InboxOutlinedIcon from '@mui/icons-material/InboxOutlined';
 import MailOutlineOutlinedIcon from '@mui/icons-material/MailOutlineOutlined';
-import { FC } from 'react';
 
 const menuItems: string[] = ['Inbox', 'Starred', 'Send email', 'Drafts'];
 
 interface Props {
   isOpen: boolean;
+  onCloseSidebar: () => void;
 }
 
-export const Sidebar: FC<Props> = ({ isOpen }) => {
+export const Sidebar: FC<Props> = ({ isOpen, onCloseSidebar }) => {
   return (
-    <Drawer anchor="left" open={isOpen} onClose={() => console.log('closing')}>
+    <Drawer anchor="left" open={isOpen} onClose={onCloseSidebar}>
       <Box sx={{ padding: '5px 10px' }}>
         <Typography variant="h4"> Menu </Typography>
       </Box>
