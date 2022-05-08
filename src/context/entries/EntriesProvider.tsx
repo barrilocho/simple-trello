@@ -1,13 +1,28 @@
 import { FC, useReducer } from 'react';
-import { EntriesContext, entriesReducer } from './';
+import { v4 as uuidv4 } from 'uuid';
 import { Entry } from '../../interfaces';
+
+import { EntriesContext, entriesReducer } from './';
 
 export interface EntriesState {
   entries: Entry[];
 }
 
 const Entries_INITIAL_STATE: EntriesState = {
-  entries: [],
+  entries: [
+    {
+      _id: uuidv4(),
+      description: 'HOla es la descripción',
+      status: 'pending',
+      createdAt: Date.now(),
+    },
+    {
+      _id: uuidv4(),
+      description: 'test',
+      status: 'finished',
+      createdAt: Date.now(),
+    },
+  ],
 };
 
 interface Props {
